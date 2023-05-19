@@ -16,4 +16,4 @@ jobs:
         LINKFREE_MONGO_CONNECTION_STRING: "mongodb://localhost:12345/test"
       run: echo "LINKFREE_MONGO_CONNECTION_STRING=$LINKFREE_MONGO_CONNECTION_STRING" >> $GITHUB_ENV
     - name: Build the Docker image
-      run: cdocker buildx build --secret id=gh,src=$GITHUB_ENV . --file Dockerfile
+      run: docker buildx build --secret id=gh,src=$GITHUB_ENV . --file Dockerfile
