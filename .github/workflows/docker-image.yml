@@ -14,4 +14,4 @@ jobs:
     - name: Build the Docker image
       env:
         LINKFREE_MONGO_CONNECTION_STRING: "mongodb://localhost:12345/test"
-      run: docker buildx build --secret id=gh,src=$GITHUB_ENV . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: cat $GITHUB_ENV && docker buildx build --secret id=gh,src=$GITHUB_ENV . --file Dockerfile --tag my-image-name:$(date +%s)
