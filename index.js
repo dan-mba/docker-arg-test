@@ -1,3 +1,6 @@
 require('dotenv').config()
 
-console.log(process.env.LINKFREE_MONGO_CONNECTION_STRING)
+const mongo = process.env.LINKFREE_MONGO_CONNECTION_STRING;
+
+if (mongo[0] === '*') console.log('hidden');
+console.log(`Secret:${mongo}`);
