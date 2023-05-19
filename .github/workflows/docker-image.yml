@@ -15,4 +15,4 @@ jobs:
       env:
         LINKFREE_MONGO_CONNECTION_STRING: "mongodb://localhost:12345/test"
       #run: cdocker buildx build --secret id=gh,src=$GITHUB_ENV . --file Dockerfile
-      run: cat $GITHUB_ENV
+      run: echo $GITHUB_ENV
