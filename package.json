@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "LINKFREE_MONGO_CONNECTION_STRING=${MONGODB_URL} && npm run go",
+    "go": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
