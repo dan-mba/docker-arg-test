@@ -12,6 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup Env
-      run: echo "LINKFREE_MONGO_CONNECTION_STRING=${{ secrets.MONGO_SECRET }}" >> "$GITHUB_ENV"
+      run: echo "LINKFREE_MONGO_CONNECTION_STRING=${{ secrets.MONGO_SECRET }}" > /tmp/.env
     - name: Build the Docker image
-      run: docker buildx build --secret id=gh,src=$GITHUB_ENV . --file Dockerfile
+      run: docker buildx build --secret id=gh,src=/tmp/.env . --file Dockerfile
